@@ -1,25 +1,182 @@
 /* Importar la fuente Lobster */
+/* Importar la fuente Playfair Display (similar a Didot) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 /* Estilos generales */
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
-    background-color: #af9dd1;
-    background-image: url("Imagenes/WhatsApp\ Image\ 2024-07-18\ at\ 2.14.42\ 66\ PM.jpeg");
+    background-color: #c1e1e1;
+    background-image: url("Imagenes/WhatsApp Image 2024-07-18 at 2.14.42 PM.jpeg");
     background-repeat: no-repeat;
-    background-size: 90%; /* Ajustar el tamaño de la imagen al 90% */
+    background-size: 90%;
     background-position: center center;
     background-attachment: fixed;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Evitar scroll horizontal */
+    overflow-x: hidden;
+}
+
+/* Estilos del carrito */
+.cart {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.cart h2 {
+    margin-top: 0;
+}
+
+.close-cart-btn {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-cart-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Otros estilos */
+header {
+    background-color: #c1e1e1;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+header .main-title {
+    margin-top: 20px;
+    display: inline-block;
+    font-family: 'Lobster', cursive;
+    font-size: 2.5em;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: white;
+    color: #000;
+}
+
+/* Estilos para el campo de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-container input[type=text] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    width: 200px;
+}
+
+.search-container button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+.catalog-title {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product {
+    display: block;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #c1e1e1;
+    color: black;
+    padding: 1rem 0;
+    text-align: center;
+    clear: both;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Otros estilos... */
+
+/* Aplicar la fuente a los encabezados */
+header .main-title, .navbar a, .catalog-title, .info-section, footer {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Aplicar la fuente a los párrafos y otros textos */
+p, h2, h3 {
+    font-family: 'Playfair Display', serif;
 }
 
 .stars {
     width: 5px;
     height: 5px;
-    background: #af9dd1;
+    background: #c1e1e1;
     position: absolute;
     animation: twinkling 2s infinite alternate;
     border-radius: 50%;
@@ -31,7 +188,7 @@ body {
 }
 
 header {
-    background-color: #af9dd1;
+    background-color: #c1e1e1;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -43,11 +200,11 @@ header .main-title {
     display: inline-block; /* Para alinear con los iconos sociales */
     font-family: 'Lobster', cursive; /* Aplicar fuente Lobster */
     font-size: 2.5em;
-    border: 2px solid #ccc; /* Añadir borde */
+    border: 2px solid #000; /* Añadir borde */
     padding: 10px 20px;
     border-radius: 8px;
     background-color: white;
-    color: #af9dd1; /* Color de texto */
+    color: #000; /* Color de texto */
 }
 
 .navbar {
@@ -71,7 +228,7 @@ header .main-title {
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: #af9dd1;
+    background-color: #c1e1e1;
     transition: width 0.3s ease;
 }
 
@@ -186,7 +343,7 @@ main {
 }
 
 footer {
-    background-color: #af9dd1;
+    background-color: #c1e1e1;
     color: black;
     padding: 1rem 0;
     text-align: center;
@@ -198,8 +355,8 @@ footer {
 .info-section {
     background-color: white;
     border: 2px solid #ccc;
-    border-left: 5px solid #af9dd1; /* Borde izquierdo de mayor tamaño */
-    border-right: 5px solid #af9dd1; /* Borde derecho de mayor tamaño */
+    border-left: 5px solid #c1e1e1; /* Borde izquierdo de mayor tamaño */
+    border-right: 5px solid #c1e1e1; /* Borde derecho de mayor tamaño */
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
@@ -252,6 +409,300 @@ footer {
     visibility: visible;
 }
 
+/* Estilos para el slider */
+.slideshow-container {
+    position: relative;
+    max-width: 50%; /* Ajusta el tamaño del slider */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 1s ease-in-out; /* Transición suave */
+}
+
+.slide.show {
+    display: block; /* Mostrar el slide actual */
+    opacity: 1;
+}
+
+.slide img {
+    width: 90%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin deformarla */
+}
+
+/* Puntos de navegación */
+.dots-container {
+    text-align: center;
+    position: absolute;
+    bottom: 10px; /* Ajusta la posición vertical */
+    left: 0;
+    right: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb; /* Color de los puntos inactivos */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171; /* Color de los puntos activos */
+}
+
+.dot:hover {
+    background-color: #717171; /* Color de los puntos al pasar el mouse */
+}
+
+/* Ocultar las flechas de navegación */
+.prev, .next {
+    display: none; /* Ocultar las flechas */
+}
+
+/* Estilos para los logos de pago */
+.payment-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los logos */
+    margin-top: 10px;
+}
+
+.payment-logo {
+    max-width: 100px; /* Ajusta el tamaño de los logos */
+    height: auto;
+}
+
+.payment-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Ajusta este valor según necesites */
+}
+
+.payment-logo, .payment-qr {
+    max-width: 100px; /* Ajusta el tamaño según necesites */
+    height: auto;
+}
+
+/* Estilos para la animación de copos de nieve */
+.snowflake {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 50%;
+    pointer-events: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+/* Estilos para el botón de añadir al carrito */
+.add-to-cart-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c1e1e1; /* Color de fondo del botón */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif; /* Fuente serif atractiva */
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Efecto hover para el botón */
+.add-to-cart-button:hover {
+    background-color: #c1e1e1; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Aumentar el tamaño ligeramente al pasar el mouse */
+}
+
+/* Efecto focus para accesibilidad */
+.add-to-cart-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Resaltar el botón cuando tiene el foco */
+}
+
+.buy-button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el carrito de compras */
+#carrito-content {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para cada ítem del carrito */
+#carrito-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+
+#carrito-vacio {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}
+
+
+/* Estilo para el botón de eliminar producto */
+#carrito-items .remove-button {
+    background-color: #e67e22; /* Similar al botón de comprar */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+
+#carrito-items .remove-button:active {
+    transform: scale(0.95);
+}
+/* Efecto al pasar el ratón sobre el botón de eliminar */
+#carrito-items .remove-button:hover {
+    background-color: #c0392b;
+}
+
+/* Efecto al hacer clic en el botón de eliminar */
+#carrito-items .remove-button:active {
+    transform: scale(0.95);
+}
+
+#clear-cart {
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Estilo para el botón de comprar */
+#buy-cart {
+    background-color: blue;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Estilos para el efecto de nieve */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear;
+}
+
+
+
+@keyframes fall {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Estilos para el botón de añadir al carrito */
+.add-to-cart-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c1e1e1;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover para el botón */
+.add-to-cart-button:hover {
+    background-color: #a1d1d1;
+    transform: scale(1.05);
+}
+
+/* Estilos para el botón de compra */
+.buy-button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
 
 /* Media queries para ajustes en dispositivos móviles */
 @media screen and (max-width: 768px) {
